@@ -17,6 +17,9 @@ import {MatRippleModule} from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSelectModule} from '@angular/material/select';
+import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-maintenance.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -27,9 +30,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatButtonModule,
     MatRippleModule,
     MatFormFieldModule,
+    MatIconModule,
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
+    MatTableModule
   ],
   declarations: [
     DashboardComponent,
@@ -40,6 +45,7 @@ import {MatSelectModule} from '@angular/material/select';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    EapMaintenanceComponent
   ]
 })
 

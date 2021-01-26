@@ -9,7 +9,7 @@ app.use(express.static(fileDirectory));
 
 app.get("*", (req, res) => {
   res.sendFile("index.html", { root: fileDirectory }, (err) => {
-    res.end();
+    res.end()
 
     if (err) throw err;
   });

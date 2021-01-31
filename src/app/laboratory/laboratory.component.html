@@ -1,86 +1,22 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div>
-      <!--
-        <object data="./assets/img/3D/Skull.obj" width="400" height="300"></object>
-      -->
-      <!--
-        <canvas id="scene" style="height: 100%;width: 100%;"></canvas>
-    -->
-        <!--
-		<script src="js/three.js"></script>
-  <script>
-    var renderer, scene, camera, banana;
 
-    var ww = window.innerWidth,
-      wh = window.innerHeight;
+    <table style="width:100%" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    function init(){
+      <ng-container matColumnDef="idLab">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let escuela"> {{escuela.idLab}} </td>
+      </ng-container>
 
-      renderer = new THREE.WebGLRenderer({canvas : document.getElementById('scene')});
-      renderer.setSize(ww,wh);
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let escuela"> {{escuela.name}} </td>
+      </ng-container>
 
-      scene = new THREE.Scene();
-
-      camera = new THREE.PerspectiveCamera(50,ww/wh, 0.1, 10000 );
-      camera.position.set(0,0,500);
-      scene.add(camera);
-
-      //Add a light in the scene
-      directionalLight = new THREE.DirectionalLight( 0xffffff, 0.8 );
-      directionalLight.position.set( 0, 0, 350 );
-      directionalLight.lookAt(new THREE.Vector3(0,0,0));
-      scene.add( directionalLight );
-
-      //Load the obj file
-      loadOBJ();
-    }
-
-    var loadOBJ = function(){
-
-      //Manager from ThreeJs to track a loader and its status
-      var manager = new THREE.LoadingManager();
-      //Loader for Obj from Three.js
-      var loader = new THREE.OBJLoader( manager );
-      
-      //Launch loading of the obj file, addBananaInScene is the callback when it's ready 
-      loader.load( 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/127738/banana.obj', addBananaInScene);
-
-    };
-
-    var addBananaInScene = function(object){
-      banana = object;
-      //Move the banana in the scene
-      banana.rotation.x = Math.PI/2;
-      banana.position.y = -200;
-      banana.position.z = 50;
-      //Go through all children of the loaded object and search for a Mesh
-      object.traverse( function ( child ) {
-        //This allow us to check if the children is an instance of the Mesh constructor
-        if(child instanceof THREE.Mesh){
-          child.material.color = new THREE.Color(0X00FF00);
-          //Sometimes there are some vertex normals missing in the .obj files, ThreeJs will compute them
-          child.geometry.computeVertexNormals();
-        }
-      });
-      //Add the 3D object in the scene
-      scene.add(banana);
-      render();
-    };
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 
 
-    var render = function () {
-      requestAnimationFrame(render);
-
-      //Turn the banana
-      banana.rotation.z += .01;
-
-      renderer.render(scene, camera);
-    };
-
-    init();
-  </script>
--->
-    </div>
   </div>
 </div>

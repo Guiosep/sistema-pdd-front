@@ -1,0 +1,62 @@
+.login-background {
+    background-color:#2f5d82;
+
+}
+
+.center-align {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-cells {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.example-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.btn-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    align-items: right;
+}
+
+.login-box .enter-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 6.5%;
+}
+
+.login-content .btn {
+    top: 50%;
+    margin-top: -25px;
+    right: -25px;
+}
+
+/*----*/
+.login-container {
+    width: 40%;
+    background-color: white; 
+    padding: 25px 35px;
+}
+
+.btn-submit {
+    width: 100%;
+}
+
+.form-container {
+    margin: 0px;
+}

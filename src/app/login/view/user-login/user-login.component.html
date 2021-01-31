@@ -1,0 +1,34 @@
+<div class="login-box center-align login-background">
+    
+    <div class="login-container mat-elevation-z7">
+        
+        <form class="form-container" (submit)="submit()" [formGroup]="registerForm">
+            
+            <mat-form-field appearance="legacy">
+                <mat-label>Username</mat-label>
+                <input matInput formControlName="username" required>
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="registerForm.controls.invalid">
+                    {{getError(username)}}
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="legacy">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-error *ngIf="registerForm.controls.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+
+            <button class="btn-submit" type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">
+                Sign in
+                <!-- <mat-icon>arrow_forward_ios</mat-icon> -->
+            </button>
+
+            <!-- <a href=""></a> -->
+
+        </form>
+
+    </div>
+    
+</div>

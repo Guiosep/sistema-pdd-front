@@ -19,7 +19,10 @@ export const ROUTES: RouteInfo[] = [
     //{ path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     //{ path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
     //{ path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
+
     { path: '/upgrade', title: 'Configuración',  icon:'settings', class: 'active-pro' },
+    //{ path: '/upgrade', title: 'Configuración',  icon:'unarchive', class: 'active-pro' },
+    { path: '/eap', title: 'Escuela', icon: 'unarchive', class: 'eap' }
 ];
 
 @Component({

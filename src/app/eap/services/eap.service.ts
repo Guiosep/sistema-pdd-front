@@ -11,6 +11,10 @@ export class EapService {
   // private escuelaSubject = new Subject<EscuelaBean>();
   // escuelaObservable = this.escuelaSubject.asObservable();
   private _escuela: EscuelaBean = new EscuelaBean();
+  
+  newEscuela: EscuelaBean;
+  private newEscuelaSubject = new Subject<EscuelaBean>();
+  newEscuelaObservable = this.newEscuelaSubject.asObservable();
 
   constructor() { }
 
@@ -24,4 +28,10 @@ export class EapService {
     // return this.escuela;
     return this._escuela;
   }
+
+  sendNewEscuela(newEscuela: EscuelaBean) {
+    this.newEscuela = newEscuela;
+    this.newEscuelaSubject.next(newEscuela);
+  }
+
 }

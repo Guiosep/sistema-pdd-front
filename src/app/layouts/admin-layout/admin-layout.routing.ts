@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-maintenance.component';
 import { EapDetailComponent } from 'app/eap/view/eap-detail/eap-detail.component';
+import { EapNewComponent } from 'app/eap/view/eap-new/eap-new.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -62,6 +63,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'upgrade',        component: UpgradeComponent },
-    { path: 'eap',            component: EapMaintenanceComponent},
-    { path: 'eap-detail',     component: EapDetailComponent}
+    { path: 'eap',            component: EapMaintenanceComponent },
+    { path: 'eap-detail',     component: EapDetailComponent},
+    { path: 'new', component: EapNewComponent },
+    { path: 'edit', component: EapNewComponent }
+    
 ];

@@ -1,0 +1,15 @@
+.form-container {
+    padding: 10px 15px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-stepper-horizontal {
+    margin-top: 8px;
+}
+
+.mat-form-field {
+    margin-top: 16px;
+}

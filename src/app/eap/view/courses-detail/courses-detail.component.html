@@ -1,0 +1,43 @@
+<div class="" style="overflow: hidden;">
+    <div class="pull-left">
+        <span mat-dialog-title>Cursos de <span>{{malla.nombre}}</span></span>
+    </div>
+    <div class="pull-right">
+        <button mat-icon-button (click)="onClose()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+
+<mat-divider></mat-divider>
+
+<ng-container *ngFor="let curso of cursos">
+    <div class="mat-elevation-z4" style="margin-top: 10px; overflow: hidden;">
+
+        <div class="" style="padding: 10px 30px; width: 50%; float: left;">
+            <div style="overflow: hidden;">
+                <span style="font-weight: bold;" class="pull-left">Nombre: </span>
+                <span class="pull-right">{{curso.nombre}}</span>
+            </div>            
+            <div style="overflow: hidden;">
+                <span style="font-weight: bold;" class="pull-left">Código: </span>
+                <span class="pull-right">{{curso.codigo}}</span>
+            </div>
+        
+        </div>
+
+        <mat-divider [vertical]="true" style="height:100%"></mat-divider>
+
+        <div class="" style="padding: 10px 30px; width: 50%; float: right;">
+            <div style="overflow: hidden;">
+                <span style="font-weight: bold;" class="pull-left">Créditos: </span>
+                <span class="pull-right">{{curso.creditos}}</span>
+            </div>
+    
+            <div style="overflow: hidden;">
+                <span style="font-weight: bold;" class="pull-left">Ciclo: </span>
+                <span class="pull-right">{{curso.ciclo}}</span>
+            </div>
+        </div>
+    </div>
+</ng-container>

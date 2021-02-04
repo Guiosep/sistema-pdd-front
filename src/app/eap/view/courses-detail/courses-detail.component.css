@@ -1,0 +1,7 @@
+/* .default-styles {
+    padding: 5px !important;
+} */
+
+::ng-deep.mat-dialog-container {
+    padding: 20px;
+}

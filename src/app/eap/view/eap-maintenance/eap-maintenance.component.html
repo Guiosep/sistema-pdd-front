@@ -1,54 +1,68 @@
 <div class="main-content">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="padding-left: 0px; padding-right: 0px;">
 
+          <div class="row" style="width: 100%; padding: 10px; margin-right: 0px; margin-left: 0px;">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit numquam modi necessitatibus aperiam, qui ratione placeat! Rerum corporis vero voluptatibus rem, minima laudantium sapiente expedita, voluptatem suscipit placeat ducimus impedit!</p>
-            
-            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          </div>
+          
+          <div class="row" style="width: 100%; padding: 10px; margin-right: 0px; margin-left: 0px;">
+            <div style="width: 95%;">
+              <table #table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-              <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef> Id </th>
-                <td mat-cell *matCellDef="let escuela"> {{escuela.id}} </td>
-              </ng-container>
-            
-              <ng-container matColumnDef="nombre">
-                <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                <td mat-cell *matCellDef="let escuela"> {{escuela.nombre}} </td>
-              </ng-container>
-            
-              <ng-container matColumnDef="creacion">
-                <th mat-header-cell *matHeaderCellDef> Creación </th>
-                <td mat-cell *matCellDef="let escuela"> {{escuela.fechaCreacion}} </td>
-              </ng-container>
-            
-              <ng-container matColumnDef="mallas">
-                <th mat-header-cell *matHeaderCellDef> Mallas </th>
-                <td mat-cell *matCellDef="let escuela"> {{escuela.mallas.length}} </td>
-              </ng-container>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef> Id </th>
+                  <td mat-cell *matCellDef="let escuela"> {{escuela.id}} </td>
+                </ng-container>
               
-              <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef> Acciones </th>                
-                <td mat-cell *matCellDef="let escuela">
-
-                  <button mat-icon-button (click)="onView(escuela)">
-                    <mat-icon>visibility</mat-icon>
-                  </button>
-                  
-                  <button mat-icon-button (click)="onEdit(escuela)">
-                    <mat-icon>edit</mat-icon>
-                  </button>
-                  
-                  <button mat-icon-button (click)="onDelete(escuela)">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-
-                </td>
-              </ng-container>
-            
-              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-            </table>
+                <ng-container matColumnDef="nombre">
+                  <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                  <td mat-cell *matCellDef="let escuela"> {{escuela.nombre}} </td>
+                </ng-container>
               
+                <ng-container matColumnDef="creacion">
+                  <th mat-header-cell *matHeaderCellDef> Creación </th>
+                  <td mat-cell *matCellDef="let escuela"> {{escuela.fechaCreacion}} </td>
+                </ng-container>
+              
+                <ng-container matColumnDef="mallas">
+                  <th mat-header-cell *matHeaderCellDef> Mallas </th>
+                  <td mat-cell *matCellDef="let escuela"> {{escuela.mallas.length}} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="actions">
+                  <th mat-header-cell *matHeaderCellDef> Acciones </th>                
+                  <td mat-cell *matCellDef="let escuela">
+
+                    <button mat-icon-button (click)="onView(escuela)" matTooltip="Ver">
+                      <mat-icon>visibility</mat-icon>
+                    </button>
+                    
+                    <button mat-icon-button (click)="onEdit(escuela)" matTooltip="Editar">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                    
+                    <button mat-icon-button (click)="onDelete(escuela)" matTooltip="Eliminar">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+
+                  </td>
+                </ng-container>
+              
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            </div>
+            
+            <div style="width: 5%; padding: 0px 8px;">
+              <div class="example-button-container">
+                <button mat-mini-fab color="white" (click)="onNew()" matTooltip="Nuevo">
+                  <mat-icon>playlist_add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
     </div>
 </div>

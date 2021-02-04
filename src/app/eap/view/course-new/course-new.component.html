@@ -1,0 +1,65 @@
+<div class="" style="overflow: hidden;">
+    <div class="pull-left">
+        <span mat-dialog-title>Nuevo curso</span>
+    </div>
+    <div class="pull-right">
+        <button mat-icon-button (click)="onClose()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+
+<mat-divider></mat-divider>
+
+<div style="padding: 10px 15px 0px;">
+
+    <form class="form-container" (submit)="submit()" [formGroup]="registerForm">
+        
+        <mat-form-field appearance="legacy">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre" required>
+            <!-- <mat-error *ngIf="registerForm.controls.invalid">
+                {{getError(username)}}
+            </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Código</mat-label>
+            <input matInput formControlName="codigo" required>
+            <!-- <mat-error *ngIf="registerForm.controls.invalid">
+                {{getError(username)}}
+            </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Créditos</mat-label>
+            <input matInput formControlName="creditos" required>
+            <!-- <mat-error *ngIf="registerForm.controls.invalid">
+                {{getError(username)}}
+            </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Tipo</mat-label>
+            <input matInput formControlName="tipo" required>
+            <!-- <mat-error *ngIf="registerForm.controls.invalid">
+                {{getError(username)}}
+            </mat-error> -->
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+            <mat-label>Ciclo</mat-label>
+            <input matInput formControlName="ciclo" required>
+            <!-- <mat-error *ngIf="registerForm.controls.invalid">
+                {{getError(username)}}
+            </mat-error> -->
+        </mat-form-field>    
+
+        <mat-divider></mat-divider>
+
+        <button class="btn-submit" type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">
+            Registrar
+        </button>
+    </form>
+    
+</div>

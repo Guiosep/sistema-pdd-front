@@ -29,6 +29,11 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { LoginFakeBackendInterceptor } from './login/interceptor/login-fake-backend.interceptor';
 import { CommonModule } from '@angular/common';
+import {MatExpansionModule} from '@angular/material/expansion';
+// import { CourseNewComponent } from './eap/view/course-new/course-new.component';
+// import { CoursesDetailComponent } from './eap/view/courses-detail/courses-detail.component';
+// import { BooleanToStringPipe } from './eap/pipes/boolean-to-string.pipe';
+// import { EapNewComponent } from './eap/view/eap-new/eap-new.component';
 // import { EapDetailComponent } from './eap/views/eap-detail/eap-detail.component';
 // import { EapMaintenanceComponent } from './eap/eap-maintenance/eap-maintenance.component';
 
@@ -48,18 +53,23 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    MatExpansionModule
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
     UserLoginComponent,
-    //EapDetailComponent,
+    // CourseNewComponent,
+    // CoursesDetailComponent,
+    // BooleanToStringPipe,
+    // EapNewComponent,
+    // EapDetailComponent,
     // EapMaintenanceComponent,
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true }
+    //{ provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })

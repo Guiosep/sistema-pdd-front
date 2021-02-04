@@ -20,6 +20,16 @@ import {MatSelectModule} from '@angular/material/select';
 import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-maintenance.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatDividerModule} from '@angular/material/divider';
+import { BooleanToStringPipe } from 'app/eap/pipes/boolean-to-string.pipe';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatStepperModule} from '@angular/material/stepper';
+
+import { EapNewComponent } from 'app/eap/view/eap-new/eap-new.component';
+import { EapDetailComponent } from 'app/eap/view/eap-detail/eap-detail.component';
+import { CoursesDetailComponent } from 'app/eap/view/courses-detail/courses-detail.component';
+import { CourseNewComponent } from 'app/eap/view/course-new/course-new.component';
 
 @NgModule({
   imports: [
@@ -34,7 +44,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatTooltipModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatStepperModule
   ],
   declarations: [
     DashboardComponent,
@@ -45,7 +59,16 @@ import { MatIconModule } from '@angular/material/icon';
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
-    EapMaintenanceComponent
+    EapMaintenanceComponent,
+    EapDetailComponent,
+    EapNewComponent,
+    BooleanToStringPipe,
+    CoursesDetailComponent,
+    CourseNewComponent
+  ], 
+  entryComponents: [
+    CoursesDetailComponent,
+    CourseNewComponent
   ]
 })
 

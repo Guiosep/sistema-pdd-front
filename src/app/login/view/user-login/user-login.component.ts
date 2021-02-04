@@ -11,7 +11,6 @@ import { LoginBean } from 'app/login/bean/login.bean';
 export class UserLoginComponent implements OnInit {
 
   hide: boolean = true;
-  // disabled: boolean = true;
   loginBean: LoginBean = new LoginBean();
 
   constructor(

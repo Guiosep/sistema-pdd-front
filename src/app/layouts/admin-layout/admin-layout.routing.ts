@@ -70,7 +70,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'eap',            component: EapMaintenanceComponent },
     { path: 'eap-detail',     component: EapDetailComponent},
     { path: 'new', component: EapNewComponent },
-    { path: 'edit', component: EapNewComponent }
+    { path: 'edit', component: EapNewComponent },
     { path: 'laboratory',     component: LaboratoryComponent },
     { path: 'laboratory-detail',     component: LaboratoryDetailComponent },    
     { path: 'material',       component: MaterialComponent },

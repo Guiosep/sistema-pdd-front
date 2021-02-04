@@ -32,6 +32,8 @@ import { CommonModule } from '@angular/common';
 // import { EapDetailComponent } from './eap/views/eap-detail/eap-detail.component';
 // import { EapMaintenanceComponent } from './eap/eap-maintenance/eap-maintenance.component';
 
+import { CoreService } from './core.service'
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -59,7 +61,8 @@ import { CommonModule } from '@angular/common';
 
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true },
+    CoreService
   ],
   bootstrap: [AppComponent]
 })

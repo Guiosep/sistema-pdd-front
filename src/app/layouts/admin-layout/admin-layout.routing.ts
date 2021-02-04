@@ -13,6 +13,7 @@ import { LaboratoryComponent } from '../../laboratory/laboratory.component';
 import { MaterialComponent } from '../../material/material.component';
 import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-maintenance.component';
 import { EapDetailComponent } from 'app/eap/view/eap-detail/eap-detail.component';
+import { LaboratoryDetailComponent } from '../../laboratory/detail/detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -67,6 +68,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'upgrade',        component: UpgradeComponent },
     
     { path: 'laboratory',     component: LaboratoryComponent },
+    { path: 'laboratory-detail',     component: LaboratoryDetailComponent },
+    
     { path: 'material',       component: MaterialComponent },
     { path: 'eap',            component: EapMaintenanceComponent},
     { path: 'eap-detail',     component: EapDetailComponent}

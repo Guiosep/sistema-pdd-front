@@ -1,93 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import * as Chartist from 'chartist';
-import * as THREE from 'three';
-//import { LaboratorioService } from '../core/api'
-
-const ELEMENT_DATA = [
-  {
-  "idLab": 1,
-  "name": "Anatomía topográfica",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 2,
-  "name": "El Brazo",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 3,
-  "name": "Región del codo",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 4,
-  "name": "Antebrazo",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 5,
-  "name": "Región de la muñeca",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 6,
-  "name": "Columna Vertebral",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 7,
-  "name": "Médula espinal",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 8,
-  "name": "Región dorsal y nuca",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 9,
-  "name": "Anatomía de superficie",
-  "idCourse": 1,
-  "course": null
-  },
-  {
-  "idLab": 10,
-  "name": "Huesos de la cabeza",
-  "idCourse": 1,
-  "course": null
-  }
-];
+import { CoreService } from '../core.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-laboratory',
-  templateUrl: './laboratory.component.html'
+  templateUrl: './laboratory.component.html',
 })
 export class LaboratoryComponent implements OnInit {
 
-  displayedColumns: string[] = ['idLab', 'name'];
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['idLab', 'name', 'actions'];
+  listLabs: any
 
   constructor(
-        //private labServ: LaboratorioService
-    ){}
+      private route: Router,
+      private api: CoreService
+    ){
+  }
 
   ngOnInit() {	
     this.cargarLaboratorios()
+
   }
 
-  async cargarLaboratorios(){
+  cargarLaboratorios(){
 
-    //let labs = await this.labServ.listarLaboratorios()
+    this.api.listarLaboratorios().subscribe((data)=>{
+      this.listLabs = data;
+              console.log("labs-> ",data)
+    })  
 
-    //console.log("labs-> ",labs)
   }
+
+  onView(laboratorio){
+
+      this.api.detailLaboratory = laboratorio
+
+      this.route.navigate(['/laboratory-detail']);
+  }
+
+  
 
 }

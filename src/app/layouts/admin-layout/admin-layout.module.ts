@@ -11,6 +11,9 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { LaboratoryComponent } from '../../laboratory/laboratory.component';
+import { MaterialComponent } from '../../material/material.component';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatRippleModule} from '@angular/material/core';
@@ -68,7 +71,10 @@ import { CourseNewComponent } from 'app/eap/view/course-new/course-new.component
   ], 
   entryComponents: [
     CoursesDetailComponent,
-    CourseNewComponent
+    CourseNewComponent,
+    LaboratoryComponent,
+    MaterialComponent,
+    EapMaintenanceComponent
   ]
 })
 

@@ -1,0 +1,8 @@
+{
+  "/api/*":{
+  	"target": "http://patronesentitiesmaintenanceservices.azurewebsites.net",
+  	"secure": false,
+  	"logLevel": "debug",
+  	"changeOrigin": true
+  }
+}

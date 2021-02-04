@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { UserLoginComponent } from './login/view/user-login/user-login.component';
 import { EapMaintenanceComponent } from './eap/view/eap-maintenance/eap-maintenance.component';
 import { EapDetailComponent } from './eap/view/eap-detail/eap-detail.component';
+import { LaboratoryDetailComponent } from './laboratory/detail/detail.component';
 
 const routes: Routes =[
   // {
@@ -42,7 +43,12 @@ const routes: Routes =[
   {
     path: 'eap-detail',
     component: EapDetailComponent
+  },
+  {
+    path: 'laboratory-detail',
+    component: LaboratoryDetailComponent
   }
+
   // {
   //   path: 'eap',
   //   component: EapMaintenanceComponent,

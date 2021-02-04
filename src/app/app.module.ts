@@ -37,6 +37,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 // import { EapDetailComponent } from './eap/views/eap-detail/eap-detail.component';
 // import { EapMaintenanceComponent } from './eap/eap-maintenance/eap-maintenance.component';
 
+import { CoreService } from './core.service'
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -69,7 +71,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
   ],
   providers: [
-    //{ provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoginFakeBackendInterceptor, multi: true },
+    CoreService
   ],
   bootstrap: [AppComponent]
 })

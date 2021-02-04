@@ -1,21 +1,16 @@
 <div class="main-content">
   <div class="container-fluid">
 
-    <table style="width:100%" mat-table [dataSource]="listCourses" class="mat-elevation-z8">
+    <table style="width:100%" mat-table [dataSource]="listLabs" class="mat-elevation-z8">
 
-      <ng-container matColumnDef="idCourse">
+      <ng-container matColumnDef="idLab">
         <th mat-header-cell *matHeaderCellDef> Código </th>
-        <td mat-cell *matCellDef="let cursos"> {{cursos.idCourse}} </td>
+        <td mat-cell *matCellDef="let laboratorio"> {{laboratorio.idLab}} </td>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let cursos"> {{cursos.name}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="credits">
-        <th mat-header-cell *matHeaderCellDef> Creditos </th>
-        <td mat-cell *matCellDef="let cursos"> {{cursos.credits}} </td>
+        <td mat-cell *matCellDef="let laboratorio"> {{laboratorio.name}} </td>
       </ng-container>
 
       <ng-container matColumnDef="actions">
@@ -40,6 +35,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+
 
   </div>
 </div>

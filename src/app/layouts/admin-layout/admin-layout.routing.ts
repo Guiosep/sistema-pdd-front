@@ -8,9 +8,13 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+
+import { LaboratoryComponent } from '../../laboratory/laboratory.component';
+import { MaterialComponent } from '../../material/material.component';
 import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-maintenance.component';
 import { EapDetailComponent } from 'app/eap/view/eap-detail/eap-detail.component';
 import { EapNewComponent } from 'app/eap/view/eap-new/eap-new.component';
+import { LaboratoryDetailComponent } from '../../laboratory/detail/detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -67,5 +71,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'eap-detail',     component: EapDetailComponent},
     { path: 'new', component: EapNewComponent },
     { path: 'edit', component: EapNewComponent }
-    
+    { path: 'laboratory',     component: LaboratoryComponent },
+    { path: 'laboratory-detail',     component: LaboratoryDetailComponent },    
+    { path: 'material',       component: MaterialComponent },
+
 ];

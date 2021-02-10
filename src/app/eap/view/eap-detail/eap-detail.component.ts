@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Curricula } from 'app/eap/beans/curricula.bean';
 import { CursoBean } from 'app/eap/beans/curso.bean';
 import { EscuelaBean } from 'app/eap/beans/escuela.bean';
 import { MallaBean } from 'app/eap/beans/malla.bean';
+import { ProfessionalSchool } from 'app/eap/beans/professional-school.bean';
 import { EapService } from 'app/eap/services/eap.service';
 import { CoursesDetailComponent } from '../courses-detail/courses-detail.component';
 
@@ -13,8 +15,8 @@ import { CoursesDetailComponent } from '../courses-detail/courses-detail.compone
 })
 export class EapDetailComponent implements OnInit {
 
-  escuela: EscuelaBean = new EscuelaBean();
-  mallas: Array<MallaBean> = new Array<MallaBean>();
+  escuela: ProfessionalSchool = new ProfessionalSchool();
+  mallas: Array<Curricula> = new Array<Curricula>();
   cursos: Array<CursoBean> = new Array<CursoBean>();
   message: string = '';
   panelOpenState = false;
@@ -27,7 +29,7 @@ export class EapDetailComponent implements OnInit {
   ngOnInit(): void {
     this.escuela = this.eapService.getEscuelaData();
     console.log('escuela: ', this.escuela);
-    this.mallas = this.escuela.mallas;
+    this.mallas = this.escuela.curricula;
     console.log('mallas: ', this.mallas);
     this.message = JSON.stringify(this.escuela);
   }

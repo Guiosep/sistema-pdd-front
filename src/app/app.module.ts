@@ -37,7 +37,9 @@ import {MatExpansionModule} from '@angular/material/expansion';
 // import { EapDetailComponent } from './eap/views/eap-detail/eap-detail.component';
 // import { EapMaintenanceComponent } from './eap/eap-maintenance/eap-maintenance.component';
 
-import { CoreService } from './core.service'
+import { CoreService } from './core.service';
+// import { NullToCharacterPipe } from './eap/pipes/null-to-character.pipe';
+// import { ObjetcToCharacterPipe } from './eap/pipes/objetc-to-character.pipe'
 
 @NgModule({
   imports: [
@@ -62,6 +64,8 @@ import { CoreService } from './core.service'
     AppComponent,
     AdminLayoutComponent,
     UserLoginComponent,
+    // NullToCharacterPipe,
+    // ObjetcToCharacterPipe,
     // CourseNewComponent,
     // CoursesDetailComponent,
     // BooleanToStringPipe,

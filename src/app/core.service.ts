@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ProfessionalSchool } from './eap/beans/professional-school.bean';
 
 @Injectable()
 export class CoreService {
@@ -44,5 +45,19 @@ export class CoreService {
 
     private getObject(key) {
         return JSON.parse(localStorage[key] || 'null')
+    }
+
+    //Professional Schools
+
+    getProfessionalSchools(): Observable<any> {
+        return this.httpClient.get<any>('/api/ProfessionalSchools');
+    }
+
+    saveNewProfessionalSchool(ps: any): Observable<any> {
+        return this.httpClient.post('/api/ProfessionalSchools', ps);
+    }
+
+    deleteProfessionalSchool(id: number): Observable<any> {
+        return this.httpClient.delete('/api/ProfessionalSchools/'+id);
     }
 }

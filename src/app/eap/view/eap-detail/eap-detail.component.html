@@ -6,24 +6,24 @@
             <div class="" style="padding: 10px 30px; width: 50%;">
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Nombre: </span>
-                    <span class="pull-right">{{escuela.nombre}}</span>
+                    <span class="pull-right">{{escuela.name}}</span>
                 </div>
 
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Fecha de creación: </span>
-                    <span class="pull-right">{{escuela.fechaCreacion}}</span>
+                    <span class="pull-right">{{escuela | nullToCharacter}}</span>
                 </div>
             
             </div>
             <div class="" style="padding: 10px 30px; width: 50%;">
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Cantidad de mallas: </span>
-                    <span class="pull-right">{{escuela.mallas.length}}</span>
+                    <span class="pull-right">{{escuela.curricula.length}}</span>
                 </div>
 
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Director: </span>
-                    <span class="pull-right">{{escuela.director}}</span>
+                    <span class="pull-right">{{escuela | nullToCharacter}}</span>
                 </div>
             </div>
         </div>
@@ -32,13 +32,13 @@
             <div class="" style="padding: 10px 30px; width: 50%;">
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Misión: </span>
-                    <span class="pull-right">{{escuela.mision}}</span>
+                    <span class="pull-right">{{escuela | nullToCharacter}}</span>
                 </div>
             </div>
             <div class="" style="padding: 10px 30px; width: 50%;">
                 <div style="overflow: hidden;">
                     <span style="font-weight: bold;" class="pull-left">Visión: </span>
-                    <span class="pull-right">{{escuela.vision}}</span>
+                    <span class="pull-right">{{escuela | nullToCharacter}}</span>
                 </div>
             </div>
         </div>
@@ -49,61 +49,68 @@
                 <span style="font-weight: bold;">Mallas</span>
             </div>
 
-            <ng-container *ngFor="let malla of mallas">
-               
-                <div style="width: 100%; padding: 5px 0px;">
-                    <mat-accordion>
-                        <mat-expansion-panel (opened)="panelOpenState = true"
-                        (closed)="panelOpenState = false">
-                          <mat-expansion-panel-header>
-                            <mat-panel-title>
-                              <div>
-                                {{malla.nombre}} - {{malla.codigo}}
-                              </div>
-                            </mat-panel-title>
-                            <mat-panel-description>
-                              Vigente: {{malla.activa | booleanToString}}
-                            </mat-panel-description>
-                          </mat-expansion-panel-header>
-                          <!-- content of the panel -->
-                          <mat-divider></mat-divider>
-                            <div class="row">
-                                <div class="" style="padding: 10px 30px; width: 50%;">
-                                    <div style="overflow: hidden;">
-                                        <span style="font-weight: bold;" class="pull-left">Fecha de creación: </span>
-                                        <span class="pull-right">{{malla.fechaCreacion}}</span>
+            <div *ngIf="mallas.length > 0">
+                <ng-container *ngFor="let malla of mallas">
+                
+                    <div style="width: 100%; padding: 5px 0px;">
+                        <mat-accordion>
+                            <mat-expansion-panel (opened)="panelOpenState = true"
+                            (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                <div>
+                                    {{malla.name}}
+                                </div>
+                                </mat-panel-title>
+                                <mat-panel-description>
+                                Año de creación: {{malla.yearCreation}}
+                                </mat-panel-description>
+                            </mat-expansion-panel-header>
+                            <!-- content of the panel -->
+                            <mat-divider></mat-divider>
+                                <div class="row">
+                                    <div class="" style="padding: 10px 30px; width: 50%;">
+                                        <div style="overflow: hidden;">
+                                            <span style="font-weight: bold;" class="pull-left">Fecha de creación: </span>
+                                            <span class="pull-right">{{malla.yearCreation | nullToCharacter}}</span>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="" style="padding: 10px 30px; width: 50%;">
+                                        <div style="overflow: hidden;">
+                                            <span style="font-weight: bold;" class="pull-left">Vigente hasta: </span>
+                                            <span class="pull-right">{{malla.vigencia}}</span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                                <div class="row">
+                                    <div class="" style="padding: 10px 30px; width: 50%;">
+                                        <div style="overflow: hidden;">
+                                            <span style="font-weight: bold;" class="pull-left">Número de créditos: </span>
+                                            <span class="pull-right">{{malla.amountCredits}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="" style="padding: 10px 30px; width: 50%;">
+                                        <div style="overflow: hidden;">
+                                            <span style="font-weight: bold;" class="pull-left">Numero de cursos: </span>
+                                            <span class="pull-right">{{malla.courses.length}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="" style="padding: 10px 30px; width: 50%;">
-                                    <div style="overflow: hidden;">
-                                        <span style="font-weight: bold;" class="pull-left">Vigente hasta: </span>
-                                        <span class="pull-right">{{malla.vigencia}}</span>
-                                    </div>
+                                
+                                <div class="row" style="padding: 10px 30px; width: 100%;">
+                                    <button mat-stroked-button color="white" (click)="openCourses(malla)">Cursos</button>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="" style="padding: 10px 30px; width: 50%;">
-                                    <div style="overflow: hidden;">
-                                        <span style="font-weight: bold;" class="pull-left">Número de créditos: </span>
-                                        <span class="pull-right">{{malla.creditajeTotal}}</span>
-                                    </div>
-                                </div>
-                                <div class="" style="padding: 10px 30px; width: 50%;">
-                                    <div style="overflow: hidden;">
-                                        <span style="font-weight: bold;" class="pull-left">Numero de ciclos: </span>
-                                        <span class="pull-right">{{malla.numeroCiclos}}</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="row" style="padding: 10px 30px; width: 100%;">
-                                <button mat-stroked-button color="white" (click)="openCourses(malla)">Cursos</button>
-                            </div>
-                        </mat-expansion-panel>
-                    </mat-accordion>
-                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
 
-            </ng-container>
+                </ng-container>
+            </div>
+            <div *ngIf="mallas.length == 0" style="width: 100%;">
+                <div style="font-style: italic; text-align: center;">
+                    No hay mallas configuradas para esta Escuela.
+                </div>
+            </div>
         </div>
 
         <!-- <div class="sketchfab-embed-wrapper"><iframe width="100%" height="800" src="https://sketchfab.com/models/1c587dd0c424419ebb76284b7ef7d975/embed?autostart=1&amp;preload=1" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

@@ -26,6 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDividerModule} from '@angular/material/divider';
 import { BooleanToStringPipe } from 'app/eap/pipes/boolean-to-string.pipe';
+import { NullToCharacterPipe } from 'app/eap/pipes/null-to-character.pipe';
+import { ObjetcToCharacterPipe } from 'app/eap/pipes/objetc-to-character.pipe';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatStepperModule} from '@angular/material/stepper';
 
@@ -66,6 +68,8 @@ import { CourseNewComponent } from 'app/eap/view/course-new/course-new.component
     EapDetailComponent,
     EapNewComponent,
     BooleanToStringPipe,
+    NullToCharacterPipe,
+    ObjetcToCharacterPipe,
     CoursesDetailComponent,
     CourseNewComponent
   ], 

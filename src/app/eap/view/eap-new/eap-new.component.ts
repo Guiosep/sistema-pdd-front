@@ -150,7 +150,11 @@ export class EapNewComponent implements OnInit {
     this.professionalSchool.name = this.escuelaBean.nombre;
     this.professionalSchool.curricula = this.curricula;
 
-    this.coreService.saveNewProfessionalSchool(this.professionalSchool);
+    console.log(typeof this.professionalSchool);
+    console.log('area: ', this.professionalSchool);
+    this.coreService.saveNewProfessionalSchool(this.professionalSchool).subscribe(result => {
+      console.log(result);
+    });
 
     this.router.navigate(['/eap']);
   }

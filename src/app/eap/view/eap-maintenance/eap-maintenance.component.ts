@@ -46,7 +46,9 @@ export class EapMaintenanceComponent implements OnInit {
 
   onDelete(escuela: ProfessionalSchool) {
     console.log('delete Escuela: ', escuela.idProfessionalSchool);
-    this.coreService.deleteProfessionalSchool(escuela.idProfessionalSchool);
+    this.coreService.deleteProfessionalSchool(escuela.idProfessionalSchool).subscribe( result => {
+      console.log(result);
+    });
   }
 
   onNew() {

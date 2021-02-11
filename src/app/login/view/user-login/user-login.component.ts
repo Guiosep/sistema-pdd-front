@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { CoreService } from 'app/core.service';
 import { LoginBean } from 'app/login/bean/login.bean';
+import { ResponseBean } from 'app/login/bean/response.bean';
 
 @Component({
   selector: 'app-user-login',
@@ -15,18 +17,20 @@ export class UserLoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private route: Router
+    private route: Router,
+    private coreService: CoreService
   ) { }
 
   registerForm = this.formBuilder.group({
     username: [
-      '', 
-      {
-        validators: [
-          Validators.required,
-          Validators.pattern(/^[a-z][a-z]*$/)
-        ]
-      }
+      ''
+      // , 
+      // {
+      //   validators: [
+      //     Validators.required,
+      //     Validators.pattern(/^[a-z][a-z]*$/)
+      //   ]
+      // }
     ],
     password: ['', [Validators.required, Validators.minLength(4), Validators.pattern(/^[A-Za-z0-9][A-Za-z0-9]*$/)]]
   });
@@ -42,9 +46,19 @@ export class UserLoginComponent implements OnInit {
     console.log('loginBean: ', this.loginBean);
     console.log('->', this.registerForm.value.username.valid);
 
-    if(this.loginBean.username != '' && this.loginBean.password != '') {
-      this.route.navigate(['/dashboard']);
-    }
+    this.coreService.sendCredentials(this.loginBean).subscribe(result => {
+      let aux = result;
+      if (aux.statusCode === 400) {
+        this.route.navigate(['/login']);
+      } else if(aux.accessToken != ''){
+        this.route.navigate(['/dashboard']);
+      }
+      
+    });
+
+    // if(this.loginBean.username != '' && this.loginBean.password != '') {
+    //   this.route.navigate(['/dashboard']);
+    // }
   }
 
 

@@ -15,6 +15,7 @@ import { EapMaintenanceComponent } from 'app/eap/view/eap-maintenance/eap-mainte
 import { EapDetailComponent } from 'app/eap/view/eap-detail/eap-detail.component';
 import { EapNewComponent } from 'app/eap/view/eap-new/eap-new.component';
 import { LaboratoryDetailComponent } from '../../laboratory/detail/detail.component';
+import { MaterialDetailComponent } from '../../material/detail/detail.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -72,7 +73,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'new', component: EapNewComponent },
     { path: 'edit', component: EapNewComponent },
     { path: 'laboratory',     component: LaboratoryComponent },
-    { path: 'laboratory-detail',     component: LaboratoryDetailComponent },    
+    { path: 'laboratory-detail',     component: LaboratoryDetailComponent },
     { path: 'material',       component: MaterialComponent },
+    { path: 'material-detail',     component: MaterialDetailComponent },
 
 ];

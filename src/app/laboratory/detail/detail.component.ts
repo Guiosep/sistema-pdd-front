@@ -6,18 +6,18 @@ import { CoreService } from '../../core.service'
   templateUrl: './detail.component.html',
 })
 export class LaboratoryDetailComponent implements OnInit {
+    dataDetail: any
 
   constructor(
       private api: CoreService
     ){
   }
 
-  ngOnInit() {	
- 
-  	let data = this.api.detailLaboratory
-  	console.log("Data-> ",data)
+  ngOnInit() {
+
+  	this.dataDetail = this.api.detailLaboratory
 
   }
-  
+
 
 }

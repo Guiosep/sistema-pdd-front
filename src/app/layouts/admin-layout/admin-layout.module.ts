@@ -67,12 +67,15 @@ import { CourseNewComponent } from 'app/eap/view/course-new/course-new.component
     EapMaintenanceComponent,
     EapDetailComponent,
     EapNewComponent,
+    LaboratoryComponent,
+    MaterialComponent,
+
     BooleanToStringPipe,
     NullToCharacterPipe,
     ObjetcToCharacterPipe,
     CoursesDetailComponent,
     CourseNewComponent
-  ], 
+  ],
   entryComponents: [
     CoursesDetailComponent,
     CourseNewComponent,

@@ -1,7 +1,46 @@
 <div class="main-content">
   <div class="container-fluid">
-    <div>
-      Hola material
-    </div>
+
+    <table style="width:100%" mat-table [dataSource]="listTareas" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="idTask">
+        <th mat-header-cell *matHeaderCellDef> Código </th>
+        <td mat-cell *matCellDef="let tarea"> {{tarea.idTask}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Titulo </th>
+        <td mat-cell *matCellDef="let tarea"> {{tarea.title}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="limitDate">
+        <th mat-header-cell *matHeaderCellDef> Fecha de entrega </th>
+        <td mat-cell *matCellDef="let tarea"> {{tarea.limitDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let tarea">
+
+          <button mat-icon-button (click)="onView(tarea)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="onEdit(tarea)">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-icon-button (click)="onDelete(tarea)">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+
   </div>
 </div>

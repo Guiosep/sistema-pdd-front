@@ -1,6 +1,6 @@
 {
   "/api/*":{
-  	"target": "http://2fdf4892220f.ngrok.io/",
+  	"target": "http://patronesentitiesmaintenanceservices.azurewebsites.net",
   	"secure": false,
   	"logLevel": "debug",
   	"changeOrigin": true

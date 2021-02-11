@@ -3,9 +3,15 @@
         <div class="row" style="padding-left: 0px; padding-right: 0px;">
 
           <div class="row" style="width: 100%; padding: 10px; margin-right: 0px; margin-left: 0px;">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit numquam modi necessitatibus aperiam, qui ratione placeat! Rerum corporis vero voluptatibus rem, minima laudantium sapiente expedita, voluptatem suscipit placeat ducimus impedit!</p>
+            <p>Los avances científicos y tecnológicos en el campo de la computación han revolucionado las actividades económicas en el mundo. Gran parte de la
+              economía global gira en torno a la industria del Software.
+              En este escenario, las empresas peruanas relacionadas con la industria del software han iniciando estrategias
+              para lograr incrementar su participación tanto nacional como internacional del mercado del software, considerando el factor
+              clave para el éxito: el capital humano competente. La Universidad Nacional Mayor de San Marcos, consciente de esta realidad ha
+              creado la Escuela Académico Profesional de Ingeniería de Software con el objetivo de formar profesionales competentes en Ingeniería de Software
+              que se desempeñen eficientemente de acuerdo a estándares internacionales de calidad.</p>
           </div>
-          
+
           <div class="row" style="width: 100%; padding: 10px; margin-right: 0px; margin-left: 0px;">
             <div style="width: 95%;">
               <table #table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -14,46 +20,46 @@
                   <th mat-header-cell *matHeaderCellDef> Id </th>
                   <td mat-cell *matCellDef="let escuela"> {{escuela.idProfessionalSchool}} </td>
                 </ng-container>
-              
+
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> Nombre </th>
                   <td mat-cell *matCellDef="let escuela"> {{escuela.name}} </td>
                 </ng-container>
-              
+
                 <ng-container matColumnDef="curricula">
                   <th mat-header-cell *matHeaderCellDef> Mallas </th>
                   <td mat-cell *matCellDef="let escuela"> {{escuela.curricula.length}} </td>
                 </ng-container>
-              
+
                 <ng-container matColumnDef="users">
                   <th mat-header-cell *matHeaderCellDef> Usuarios </th>
                   <td mat-cell *matCellDef="let escuela"> {{escuela.users.length}} </td>
                 </ng-container>
-                
+
                 <ng-container matColumnDef="actions">
-                  <th mat-header-cell *matHeaderCellDef> Acciones </th>                
+                  <th mat-header-cell *matHeaderCellDef> Acciones </th>
                   <td mat-cell *matCellDef="let escuela">
 
                     <button mat-icon-button (click)="onView(escuela)" matTooltip="Ver">
                       <mat-icon>visibility</mat-icon>
                     </button>
-                    
+
                     <button mat-icon-button (click)="onEdit(escuela)" matTooltip="Editar">
                       <mat-icon>edit</mat-icon>
                     </button>
-                    
+
                     <button mat-icon-button (click)="onDelete(escuela)" matTooltip="Eliminar">
                       <mat-icon>delete</mat-icon>
                     </button>
 
                   </td>
                 </ng-container>
-              
+
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
               </table>
             </div>
-            
+
             <div style="width: 5%; padding: 0px 8px;">
               <div class="example-button-container">
                 <button mat-mini-fab color="white" (click)="onNew()" matTooltip="Nuevo">

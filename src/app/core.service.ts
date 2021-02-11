@@ -19,6 +19,9 @@ export class CoreService {
 		return this.httpClient.get<any>('/api/Courses');
 	}
 
+    listarTareas(): Observable<any>{
+        return this.httpClient.get<any>('/api/Tareas');
+    }
 
     get detailLaboratory() {
         return this.getObject('detailLaboratory')
@@ -28,6 +31,17 @@ export class CoreService {
     console.log("laboratory-> ",laboratory)
         if (laboratory) {
             this.setObject('detailLaboratory', laboratory)
+        }
+    }
+
+    get detailMaterial() {
+        return this.getObject('detailMaterial')
+    }
+
+    set detailMaterial(material) {
+        console.log("material-> ",material)
+        if (material) {
+            this.setObject('detailMaterial', material)
         }
     }
 
